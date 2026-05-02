@@ -7,8 +7,7 @@ load_dotenv()
 
 api_key = os.environ.get("AIzaSyCRuD1bP409NJKSz8rI63inUj4JOpJ66p0") 
 if not api_key:
-    raise ValueError("AIzaSyCRuD1bP409NJKSz8rI63inUj4JOpJ66p0 not set!")
-
+    raise ValueError("GEMINI_API_KEY environment variable not set!")
 genai.configure(api_key=api_key)
 
 # Auto-pick first available flash model
