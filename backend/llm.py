@@ -4,7 +4,12 @@ from database import execute_query, get_schema
 from dotenv import load_dotenv
 
 load_dotenv()
-genai.configure(api_key=os.getenv("AIzaSyAj4Xap89WokepqHr5xku5gnEkmF4v1QlI"))
+
+api_key = os.environ.get("AIzaSyCRuD1bP409NJKSz8rI63inUj4JOpJ66p0") 
+if not api_key:
+    raise ValueError("AIzaSyCRuD1bP409NJKSz8rI63inUj4JOpJ66p0 not set!")
+
+genai.configure(api_key=api_key)
 
 # Auto-pick first available flash model
 def get_model():
